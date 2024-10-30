@@ -1,6 +1,6 @@
 from datetime import datetime
 
-class JapaneseDatetime(datetime):
+class jpdatetime(datetime):
     ERA_MAP = [
         ("令和", datetime(2019, 5, 1)),
         ("平成", datetime(1989, 1, 8)),
@@ -30,7 +30,7 @@ class JapaneseDatetime(datetime):
         return super().strftime(format_string)
 
     def get_japanese_era(self):
-        for era, start_date in JapaneseDatetime.ERA_MAP:
+        for era, start_date in jpdatetime.ERA_MAP:
             if self >= start_date:
                 year_in_era = self.year - start_date.year + 1
                 return era, year_in_era
