@@ -88,12 +88,14 @@ class jpdatetime(datetime):
         if "%G" in format_string or "%g" in format_string:
             era, year_in_era = self._get_japanese_era()
             if era:
-                year_display = "元" if year_in_era == 1 else str(year_in_era)
+                year_display_G = "元" if year_in_era == 1 else str(year_in_era)
+                year_display_g = "1" if year_in_era == 1 else str(year_in_era)
                 short_era = self.ERA_MAP[era]["short"]
                 if "%G" in format_string:
-                    format_string = format_string.replace("%G", f"{era}{year_display}")
+                    format_string = format_string.replace("%G", f"{era}{year_display_G}")
                 if "%g" in format_string:
-                    format_string = format_string.replace("%g", f"{short_era}{year_display}")
+                    format_string = format_string.replace("%g", f"{short_era}{year_display_g}")
+        return super().strftime(format_string)
         return super().strftime(format_string)
 
     def _get_japanese_era(self):

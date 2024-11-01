@@ -32,7 +32,7 @@ class Testjpdatetime(unittest.TestCase):
             (jpdatetime(2023, 10, 30), "%g年%m月%d日", "令5年10月30日"),
             (jpdatetime(2018, 4, 1), "%g年%m月%d日", "平30年04月01日"),
             (jpdatetime(1989, 1, 7), "%g年%m月%d日", "昭64年01月07日"),
-            (jpdatetime(1912, 7, 30), "%g年%m月%d日", "大元年07月30日"),
+            (jpdatetime(1912, 7, 30), "%g年%m月%d日", "大1年07月30日"),
             (jpdatetime(1912, 7, 29), "%g年%m月%d日", "明45年07月29日")
         ]
 
