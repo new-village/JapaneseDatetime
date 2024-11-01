@@ -54,6 +54,7 @@ print(formatted_date)  # Output: "令和元年5月1日"
 
 ### Format Specifiers
 - `%G`: Represents the Japanese era name and year. The format will be like "令和5" or "平成元" for the first year of the era.
+- `%g`: Represents the Japanese abbrivation era name and year. The format will be like "令2" or "平元" for the first year of the era.
 - All other format specifiers (`%Y`, `%m`, `%d`, etc.) are identical to the standard `datetime` format specifiers.
 
 ## Limitation

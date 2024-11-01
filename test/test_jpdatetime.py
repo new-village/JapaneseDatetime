@@ -13,7 +13,12 @@ class Testjpdatetime(unittest.TestCase):
             ("令和1年5月1日", "%G年%m月%d日", datetime(2019, 5, 1)),
             ("平成1年1月8日", "%G年%m月%d日", datetime(1989, 1, 8)),
             ("令和元年5月1日", "%G年%m月%d日", datetime(2019, 5, 1)),
-            ("平成元年1月8日", "%G年%m月%d日", datetime(1989, 1, 8))
+            ("平成元年1月8日", "%G年%m月%d日", datetime(1989, 1, 8)),
+            ("令5年10月30日", "%g年%m月%d日", datetime(2023, 10, 30)),
+            ("平30年4月1日", "%g年%m月%d日", datetime(2018, 4, 1)),
+            ("昭64年1月7日", "%g年%m月%d日", datetime(1989, 1, 7)),
+            ("大1年7月30日", "%g年%m月%d日", datetime(1912, 7, 30)),
+            ("明45年7月29日", "%g年%m月%d日", datetime(1912, 7, 29))
         ]
 
         self.test_cases_strftime = [
@@ -23,7 +28,12 @@ class Testjpdatetime(unittest.TestCase):
             (jpdatetime(1926, 12, 24), "%G年%m月%d日", "大正15年12月24日"),
             (jpdatetime(1912, 7, 29), "%G年%m月%d日", "明治45年07月29日"),
             (jpdatetime(2019, 5, 1), "%G年%m月%d日", "令和元年05月01日"),
-            (jpdatetime(1989, 1, 8), "%G年%m月%d日", "平成元年01月08日")
+            (jpdatetime(1989, 1, 8), "%G年%m月%d日", "平成元年01月08日"),
+            (jpdatetime(2023, 10, 30), "%g年%m月%d日", "令5年10月30日"),
+            (jpdatetime(2018, 4, 1), "%g年%m月%d日", "平30年04月01日"),
+            (jpdatetime(1989, 1, 7), "%g年%m月%d日", "昭64年01月07日"),
+            (jpdatetime(1912, 7, 30), "%g年%m月%d日", "大元年07月30日"),
+            (jpdatetime(1912, 7, 29), "%g年%m月%d日", "明45年07月29日")
         ]
 
     def test_strptime(self):

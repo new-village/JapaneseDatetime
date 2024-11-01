@@ -1,14 +1,14 @@
 from datetime import datetime
 
 class jpdatetime(datetime):
-    # Mapping of Japanese eras to their starting dates
-    ERA_MAP = [
-        ("令和", datetime(2019, 5, 1)),
-        ("平成", datetime(1989, 1, 8)),
-        ("昭和", datetime(1926, 12, 25)),
-        ("大正", datetime(1912, 7, 30)),
-        ("明治", datetime(1868, 9, 8))
-    ]
+    # Mapping of Japanese eras to their starting dates and short names
+    ERA_MAP = {
+        "令和": {"short": "令", "start_date": datetime(2019, 5, 1)},
+        "平成": {"short": "平", "start_date": datetime(1989, 1, 8)},
+        "昭和": {"short": "昭", "start_date": datetime(1926, 12, 25)},
+        "大正": {"short": "大", "start_date": datetime(1912, 7, 30)},
+        "明治": {"short": "明", "start_date": datetime(1868, 9, 8)}
+    }
 
     @classmethod
     def strptime(cls, date_string, format_string):
@@ -27,7 +27,7 @@ class jpdatetime(datetime):
             start_year = cls._get_start_year(era_name)
             western_year = start_year + year_in_era - 1
             date_string = f"{western_year}年{date_string_wo_era}"
-            format_string = format_string.replace("%G", "%Y")
+            format_string = format_string.replace("%G", "%Y").replace("%g", "%Y")
         return super().strptime(date_string, format_string)
 
     @classmethod
@@ -41,9 +41,16 @@ class jpdatetime(datetime):
         Returns:
             tuple: A tuple containing the era name, year in the era, and remaining date string.
         """
-        for era_name, start_date in cls.ERA_MAP:
+        for era_name, era_info in cls.ERA_MAP.items():
+            short_name = era_info["short"]
             if era_name in date_string:
                 date_string_wo_era = date_string.replace(era_name, "").strip()
+                year_part = date_string_wo_era.split("年")[0].strip()
+                year_in_era = 1 if year_part == "元" else int(year_part)
+                date_string_wo_era = date_string_wo_era.split("年", 1)[1]
+                return era_name, year_in_era, date_string_wo_era
+            elif short_name in date_string:
+                date_string_wo_era = date_string.replace(short_name, "").strip()
                 year_part = date_string_wo_era.split("年")[0].strip()
                 year_in_era = 1 if year_part == "元" else int(year_part)
                 date_string_wo_era = date_string_wo_era.split("年", 1)[1]
@@ -64,9 +71,8 @@ class jpdatetime(datetime):
         Raises:
             ValueError: If the era name is unknown.
         """
-        for era, start_date in cls.ERA_MAP:
-            if era == era_name:
-                return start_date.year
+        if era_name in cls.ERA_MAP:
+            return cls.ERA_MAP[era_name]["start_date"].year
         raise ValueError(f"Unknown era: {era_name}")
 
     def strftime(self, format_string):
@@ -79,11 +85,15 @@ class jpdatetime(datetime):
         Returns:
             str: Formatted date string.
         """
-        if "%G" in format_string:
+        if "%G" in format_string or "%g" in format_string:
             era, year_in_era = self._get_japanese_era()
             if era:
                 year_display = "元" if year_in_era == 1 else str(year_in_era)
-                format_string = format_string.replace("%G", f"{era}{year_display}")
+                short_era = self.ERA_MAP[era]["short"]
+                if "%G" in format_string:
+                    format_string = format_string.replace("%G", f"{era}{year_display}")
+                if "%g" in format_string:
+                    format_string = format_string.replace("%g", f"{short_era}{year_display}")
         return super().strftime(format_string)
 
     def _get_japanese_era(self):
@@ -93,7 +103,8 @@ class jpdatetime(datetime):
         Returns:
             tuple: A tuple containing the era name and the year within the era.
         """
-        for era, start_date in jpdatetime.ERA_MAP:
+        for era, era_info in jpdatetime.ERA_MAP.items():
+            start_date = era_info["start_date"]
             if self >= start_date:
                 year_in_era = self.year - start_date.year + 1
                 return era, year_in_era
