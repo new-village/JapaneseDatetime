@@ -31,29 +31,29 @@ from jpdatetime import jpdatetime
 
 # Parsing Japanese era date string to a datetime object
 date_string = "令和5年10月30日"
-format_string = "%j年%m月%d日"
+format_string = "%G年%m月%d日"
 date_obj = jpdatetime.strptime(date_string, format_string)
 print(date_obj)  # Output: 2023-10-30 00:00:00
 
 # Formatting a datetime object to a Japanese era date string
 date = jpdatetime(2024, 10, 30)
-formatted_date = date.strftime("%j年%m月%d日")
+formatted_date = date.strftime("%G年%m月%d日")
 print(formatted_date)  # Output: "令和6年10月30日"
 
 # Handling the first year of an era
 date_string = "令和元年5月1日"
-format_string = "%j年%m月%d日"
+format_string = "%G年%m月%d日"
 date_obj = jpdatetime.strptime(date_string, format_string)
 print(date_obj)  # Output: 2019-05-01 00:00:00
 
 # Formatting a datetime object for the first year of an era
 date = jpdatetime(2019, 5, 1)
-formatted_date = date.strftime("%j年%m月%d日")
+formatted_date = date.strftime("%G年%m月%d日")
 print(formatted_date)  # Output: "令和元年5月1日"
 ```
 
 ### Format Specifiers
-- `%j`: Represents the Japanese era name and year. The format will be like "令和5" or "平成元" for the first year of the era.
+- `%G`: Represents the Japanese era name and year. The format will be like "令和5" or "平成元" for the first year of the era.
 - All other format specifiers (`%Y`, `%m`, `%d`, etc.) are identical to the standard `datetime` format specifiers.
 
 ## Limitation

@@ -17,7 +17,7 @@ class jpdatetime(datetime):
 
         Args:
             date_string (str): The date string in Japanese era format.
-            format_string (str): The format string, where %j is used to represent the era.
+            format_string (str): The format string, where %G is used to represent the era.
 
         Returns:
             jpdatetime: Parsed jpdatetime object.
@@ -27,7 +27,7 @@ class jpdatetime(datetime):
             start_year = cls._get_start_year(era_name)
             western_year = start_year + year_in_era - 1
             date_string = f"{western_year}年{date_string_wo_era}"
-            format_string = format_string.replace("%j", "%Y")
+            format_string = format_string.replace("%G", "%Y")
         return super().strptime(date_string, format_string)
 
     @classmethod
@@ -74,16 +74,16 @@ class jpdatetime(datetime):
         Format the date using a given format string, supporting Japanese era notation.
 
         Args:
-            format_string (str): The format string, where %j represents the Japanese era.
+            format_string (str): The format string, where %G represents the Japanese era.
 
         Returns:
             str: Formatted date string.
         """
-        if "%j" in format_string:
+        if "%G" in format_string:
             era, year_in_era = self._get_japanese_era()
             if era:
                 year_display = "元" if year_in_era == 1 else str(year_in_era)
-                format_string = format_string.replace("%j", f"{era}{year_display}")
+                format_string = format_string.replace("%G", f"{era}{year_display}")
         return super().strftime(format_string)
 
     def _get_japanese_era(self):
