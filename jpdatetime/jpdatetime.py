@@ -1,14 +1,20 @@
+import os
 import re
+import json
 from datetime import datetime
 
-# List of Japanese eras with their names and starting dates
-eras = [
-    {'name_en': 'Reiwa', 'name_ja': '令和', 'start_date': datetime(2019, 5, 1)},
-    {'name_en': 'Heisei', 'name_ja': '平成', 'start_date': datetime(1989, 1, 8)},
-    {'name_en': 'Showa', 'name_ja': '昭和', 'start_date': datetime(1926, 12, 25)},
-    {'name_en': 'Taisho', 'name_ja': '大正', 'start_date': datetime(1912, 7, 30)},
-    {'name_en': 'Meiji', 'name_ja': '明治', 'start_date': datetime(1868, 9, 8)},
-]
+# Load the eras data from an external JSON file
+module_dir = os.path.dirname(os.path.abspath(__file__))
+eras_file_path = os.path.join(module_dir, 'eras.json')
+
+with open(eras_file_path, 'r', encoding='utf-8') as f:
+    eras_data = json.load(f)
+
+# Parse the start dates into datetime objects
+eras = []
+for era in eras_data:
+    era['start_date'] = datetime.strptime(era['start_date'], '%Y-%m-%d')
+    eras.append(era)
 
 class jpdatetime(datetime):
     # Unified custom format codes mapping to their handler functions
