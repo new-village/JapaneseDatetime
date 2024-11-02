@@ -187,7 +187,10 @@ class jpdatetime(datetime):
         """Formats the date using full Japanese era name."""
         era = self._get_era_info()
         era_year = self.year - era['start_date'].year + 1
-        era_year_str = '元' if era_year == 1 else str(era_year)
+        if era_year == 1:
+            era_year_str = '元'
+        else:
+            era_year_str = f"{era_year:02d}"  # Zero-pad to two digits
         return f"{era['name_ja']}{era_year_str}"
 
     def _format_abbr_jp_era(self):
@@ -195,14 +198,14 @@ class jpdatetime(datetime):
         era = self._get_era_info()
         era_year = self.year - era['start_date'].year + 1
         era_abbr = era['name_ja'][0]
-        era_year_str = str(era_year)
+        era_year_str = f"{era_year:02d}"  # Zero-pad to two digits
         return f"{era_abbr}{era_year_str}"
 
     def _format_full_en_era(self):
         """Formats the date using full English era name."""
         era = self._get_era_info()
         era_year = self.year - era['start_date'].year + 1
-        era_year_str = str(era_year)
+        era_year_str = f"{era_year:02d}"  # Zero-pad to two digits
         return f"{era['name_en']} {era_year_str}"
 
     def _format_abbr_en_era(self):
@@ -210,5 +213,5 @@ class jpdatetime(datetime):
         era = self._get_era_info()
         era_year = self.year - era['start_date'].year + 1
         era_abbr = era['name_en'][0]
-        era_year_str = str(era_year)
+        era_year_str = f"{era_year:02d}"  # Zero-pad to two digits
         return f"{era_abbr}{era_year_str}"

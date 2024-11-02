@@ -87,9 +87,9 @@ print(formatted_date)  # Output: "R1/05/01"
 | Directive | Meaning | Example |
 |-------------|-------------|-----------------|
 | `%G` | Full Japanese era name with year. Displays "令和元" for the first year and "平成30" for other years. | 令和元, 平成30 |
-| `%g` | Abbreviated Japanese era name (first character) with year. Shows "令1" for the first year and "平30" for other years. | 令1, 平30 |
-| `%E` | Full English era name with year. Displays "Reiwa 1" for the first year and "Heisei 30" for other years. | Reiwa 1, Heisei 30 |
-| `%e` | Abbreviated English era name (first letter) with year. Shows "R1" for the first year and "H30" for other years. | R1, H30 |
+| `%g` | Abbreviated Japanese era name (first character) with year. Shows "令1" for the first year and "平30" for other years. | 令01, 平30 |
+| `%E` | Full English era name with year. Displays "Reiwa 01" for the first year and "Heisei 30" for other years. | Reiwa 01, Heisei 30 |
+| `%e` | Abbreviated English era name (first letter) with year. Shows "R01" for the first year and "H30" for other years. | R01, H30 |
 
 `%Y`, `%m`, `%d`, `%B`, etc.: [Standard datetime format](https://docs.python.org/3/library/datetime.html#format-codes) specifiers.
 

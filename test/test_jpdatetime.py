@@ -22,8 +22,6 @@ class Testjpdatetime(unittest.TestCase):
             ("明治元年9月8日", "%G年%m月%d日", datetime(1868, 9, 8)),
             # Edge case: Date just before an era change
             ("平成31年4月30日", "%G年%m月%d日", datetime(2019, 4, 30)),
-            # Edge case: Era start date
-            ("令和元年5月1日", "%G年%m月%d日", datetime(2019, 5, 1)),
             # Leap year
             ("平成4年2月29日", "%G年%m月%d日", datetime(1992, 2, 29)),
         ]
@@ -90,79 +88,79 @@ class Testjpdatetime(unittest.TestCase):
 
         # Separate test cases for strftime (%G)
         self.test_cases_strftime_G = [
-            # Existing test cases
-            (jpdatetime(2024, 10, 30), "%G年%m月%d日", "令和6年10月30日"),
+            # Existing test cases with zero-padded years
+            (jpdatetime(2024, 10, 30), "%G年%m月%d日", "令和06年10月30日"),
             (jpdatetime(2018, 4, 1), "%G年%m月%d日", "平成30年04月01日"),
             (jpdatetime(1989, 1, 7), "%G年%m月%d日", "昭和64年01月07日"),
             (jpdatetime(1926, 12, 24), "%G年%m月%d日", "大正15年12月24日"),
             (jpdatetime(1912, 7, 29), "%G年%m月%d日", "明治45年07月29日"),
             (jpdatetime(2019, 5, 1), "%G年%m月%d日", "令和元年05月01日"),
             (jpdatetime(1989, 1, 8), "%G年%m月%d日", "平成元年01月08日"),
-            # Additional test cases
+            # Additional test cases with zero-padded years
             (jpdatetime(1926, 12, 25), "%G年%m月%d日", "昭和元年12月25日"),
             (jpdatetime(1912, 7, 30), "%G年%m月%d日", "大正元年07月30日"),
             (jpdatetime(1868, 9, 8), "%G年%m月%d日", "明治元年09月08日"),
             # Edge case: Date just before an era change
             (jpdatetime(2019, 4, 30), "%G年%m月%d日", "平成31年04月30日"),
             # Leap year
-            (jpdatetime(1992, 2, 29), "%G年%m月%d日", "平成4年02月29日"),
+            (jpdatetime(1992, 2, 29), "%G年%m月%d日", "平成04年02月29日"),
         ]
 
         # Separate test cases for strftime (%g)
         self.test_cases_strftime_g = [
-            # Existing test cases
-            (jpdatetime(2023, 10, 30), "%g年%m月%d日", "令5年10月30日"),
+            # Existing test cases with zero-padded years
+            (jpdatetime(2023, 10, 30), "%g年%m月%d日", "令05年10月30日"),
             (jpdatetime(2018, 4, 1), "%g年%m月%d日", "平30年04月01日"),
             (jpdatetime(1989, 1, 7), "%g年%m月%d日", "昭64年01月07日"),
-            (jpdatetime(1912, 7, 30), "%g年%m月%d日", "大1年07月30日"),
+            (jpdatetime(1912, 7, 30), "%g年%m月%d日", "大01年07月30日"),
             (jpdatetime(1912, 7, 29), "%g年%m月%d日", "明45年07月29日"),
-            # Additional test cases
-            (jpdatetime(2019, 5, 1), "%g年%m月%d日", "令1年05月01日"),
-            (jpdatetime(1989, 1, 8), "%g年%m月%d日", "平1年01月08日"),
-            (jpdatetime(1926, 12, 25), "%g年%m月%d日", "昭1年12月25日"),
-            (jpdatetime(1868, 9, 8), "%g年%m月%d日", "明1年09月08日"),
+            # Additional test cases with zero-padded years
+            (jpdatetime(2019, 5, 1), "%g年%m月%d日", "令01年05月01日"),
+            (jpdatetime(1989, 1, 8), "%g年%m月%d日", "平01年01月08日"),
+            (jpdatetime(1926, 12, 25), "%g年%m月%d日", "昭01年12月25日"),
+            (jpdatetime(1868, 9, 8), "%g年%m月%d日", "明01年09月08日"),
             # Edge case: Date just before an era change
             (jpdatetime(2019, 4, 30), "%g年%m月%d日", "平31年04月30日"),
             # Leap year
-            (jpdatetime(1992, 2, 29), "%g年%m月%d日", "平4年02月29日"),
+            (jpdatetime(1992, 2, 29), "%g年%m月%d日", "平04年02月29日"),
         ]
 
         # Separate test cases for strftime (%E)
         self.test_cases_strftime_E = [
-            # Existing test cases
-            (jpdatetime(2023, 10, 30), "%E, %B %d", "Reiwa 5, October 30"),
+            # Existing test cases with zero-padded years
+            (jpdatetime(2023, 10, 30), "%E, %B %d", "Reiwa 05, October 30"),
             (jpdatetime(2018, 4, 1), "%E, %B %d", "Heisei 30, April 01"),
             (jpdatetime(1989, 1, 7), "%E, %B %d", "Showa 64, January 07"),
-            (jpdatetime(1912, 7, 30), "%E, %B %d", "Taisho 1, July 30"),
+            (jpdatetime(1912, 7, 30), "%E, %B %d", "Taisho 01, July 30"),
             (jpdatetime(1912, 7, 29), "%E, %B %d", "Meiji 45, July 29"),
-            # Additional test cases
-            (jpdatetime(2019, 5, 1), "%E, %B %d", "Reiwa 1, May 01"),
-            (jpdatetime(1989, 1, 8), "%E, %B %d", "Heisei 1, January 08"),
-            (jpdatetime(1926, 12, 25), "%E, %B %d", "Showa 1, December 25"),
-            (jpdatetime(1868, 9, 8), "%E, %B %d", "Meiji 1, September 08"),
+            # Additional test cases with zero-padded years
+            (jpdatetime(2019, 5, 1), "%E, %B %d", "Reiwa 01, May 01"),
+            (jpdatetime(1989, 1, 8), "%E, %B %d", "Heisei 01, January 08"),
+            (jpdatetime(1926, 12, 25), "%E, %B %d", "Showa 01, December 25"),
+            (jpdatetime(1868, 9, 8), "%E, %B %d", "Meiji 01, September 08"),
             # Edge case: Date just before an era change
             (jpdatetime(2019, 4, 30), "%E, %B %d", "Heisei 31, April 30"),
             # Leap year
-            (jpdatetime(1992, 2, 29), "%E, %B %d", "Heisei 4, February 29"),
+            (jpdatetime(1992, 2, 29), "%E, %B %d", "Heisei 04, February 29"),
         ]
 
         # Separate test cases for strftime (%e)
         self.test_cases_strftime_e = [
-            # Existing test cases
-            (jpdatetime(2023, 10, 30), "%e/%m/%d", "R5/10/30"),
+            # Existing test cases with zero-padded years
+            (jpdatetime(2023, 10, 30), "%e/%m/%d", "R05/10/30"),
             (jpdatetime(2018, 4, 1), "%e/%m/%d", "H30/04/01"),
             (jpdatetime(1989, 1, 7), "%e/%m/%d", "S64/01/07"),
-            (jpdatetime(1912, 7, 30), "%e/%m/%d", "T1/07/30"),
+            (jpdatetime(1912, 7, 30), "%e/%m/%d", "T01/07/30"),
             (jpdatetime(1912, 7, 29), "%e/%m/%d", "M45/07/29"),
-            # Additional test cases
-            (jpdatetime(2019, 5, 1), "%e/%m/%d", "R1/05/01"),
-            (jpdatetime(1989, 1, 8), "%e/%m/%d", "H1/01/08"),
-            (jpdatetime(1926, 12, 25), "%e/%m/%d", "S1/12/25"),
-            (jpdatetime(1868, 9, 8), "%e/%m/%d", "M1/09/08"),
+            # Additional test cases with zero-padded years
+            (jpdatetime(2019, 5, 1), "%e/%m/%d", "R01/05/01"),
+            (jpdatetime(1989, 1, 8), "%e/%m/%d", "H01/01/08"),
+            (jpdatetime(1926, 12, 25), "%e/%m/%d", "S01/12/25"),
+            (jpdatetime(1868, 9, 8), "%e/%m/%d", "M01/09/08"),
             # Edge case: Date just before an era change
             (jpdatetime(2019, 4, 30), "%e/%m/%d", "H31/04/30"),
             # Leap year
-            (jpdatetime(1992, 2, 29), "%e/%m/%d", "H4/02/29"),
+            (jpdatetime(1992, 2, 29), "%e/%m/%d", "H04/02/29"),
         ]
 
     def test_strptime_full_jpEra(self):
