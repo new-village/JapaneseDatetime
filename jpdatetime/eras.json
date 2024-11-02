@@ -1,7 +1,1207 @@
 [
-    {"name_en": "Reiwa", "name_ja": "令和", "start_date": "2019-05-01"},
-    {"name_en": "Heisei", "name_ja": "平成", "start_date": "1989-01-08"},
-    {"name_en": "Showa", "name_ja": "昭和", "start_date": "1926-12-25"},
-    {"name_en": "Taisho", "name_ja": "大正", "start_date": "1912-07-30"},
-    {"name_en": "Meiji", "name_ja": "明治", "start_date": "1868-09-08"}
+    {
+        "name_ja": "令和",
+        "name_en": "Reiwa",
+        "start_date": "2019-05-01"
+    },
+    {
+        "name_ja": "平成",
+        "name_en": "Heisei",
+        "start_date": "1989-01-08"
+    },
+    {
+        "name_ja": "昭和",
+        "name_en": "Shōwa",
+        "start_date": "1926-12-25"
+    },
+    {
+        "name_ja": "大正",
+        "name_en": "Taishō",
+        "start_date": "1912-07-30"
+    },
+    {
+        "name_ja": "明治",
+        "name_en": "Meiji",
+        "start_date": "1868-01-25"
+    },
+    {
+        "name_ja": "慶応",
+        "name_en": "Keiō",
+        "start_date": "1865-05-01"
+    },
+    {
+        "name_ja": "元治",
+        "name_en": "Genji",
+        "start_date": "1864-03-27"
+    },
+    {
+        "name_ja": "文久",
+        "name_en": "Bunkyū",
+        "start_date": "1861-03-29"
+    },
+    {
+        "name_ja": "万延",
+        "name_en": "Man'en",
+        "start_date": "1860-04-08"
+    },
+    {
+        "name_ja": "安政",
+        "name_en": "Ansei",
+        "start_date": "1855-01-15"
+    },
+    {
+        "name_ja": "嘉永",
+        "name_en": "Kaei",
+        "start_date": "1848-04-01"
+    },
+    {
+        "name_ja": "弘化",
+        "name_en": "Kōka",
+        "start_date": "1845-01-09"
+    },
+    {
+        "name_ja": "天保",
+        "name_en": "Tenpō",
+        "start_date": "1831-01-23"
+    },
+    {
+        "name_ja": "文政",
+        "name_en": "Bunsei",
+        "start_date": "1818-05-26"
+    },
+    {
+        "name_ja": "文化",
+        "name_en": "Bunka",
+        "start_date": "1804-03-22"
+    },
+    {
+        "name_ja": "享和",
+        "name_en": "Kyōwa",
+        "start_date": "1801-03-19"
+    },
+    {
+        "name_ja": "寛政",
+        "name_en": "Kansei",
+        "start_date": "1789-02-19"
+    },
+    {
+        "name_ja": "天明",
+        "name_en": "Tenmei",
+        "start_date": "1781-04-25"
+    },
+    {
+        "name_ja": "安永",
+        "name_en": "An'ei",
+        "start_date": "1772-12-10"
+    },
+    {
+        "name_ja": "明和",
+        "name_en": "Meiwa",
+        "start_date": "1764-06-30"
+    },
+    {
+        "name_ja": "宝暦",
+        "name_en": "Hōreki",
+        "start_date": "1751-12-14"
+    },
+    {
+        "name_ja": "寛延",
+        "name_en": "Kan'en",
+        "start_date": "1748-08-05"
+    },
+    {
+        "name_ja": "延享",
+        "name_en": "Enkyō",
+        "start_date": "1744-04-03"
+    },
+    {
+        "name_ja": "寛保",
+        "name_en": "Kanpō",
+        "start_date": "1741-04-12"
+    },
+    {
+        "name_ja": "元文",
+        "name_en": "Genbun",
+        "start_date": "1736-06-07"
+    },
+    {
+        "name_ja": "享保",
+        "name_en": "Kyōhō",
+        "start_date": "1716-08-09"
+    },
+    {
+        "name_ja": "正徳",
+        "name_en": "Shōtoku",
+        "start_date": "1711-06-11"
+    },
+    {
+        "name_ja": "宝永",
+        "name_en": "Hōei",
+        "start_date": "1704-04-16"
+    },
+    {
+        "name_ja": "元禄",
+        "name_en": "Genroku",
+        "start_date": "1688-10-23"
+    },
+    {
+        "name_ja": "貞享",
+        "name_en": "Jōkyō",
+        "start_date": "1684-04-05"
+    },
+    {
+        "name_ja": "天和",
+        "name_en": "Tenna",
+        "start_date": "1681-11-09"
+    },
+    {
+        "name_ja": "延宝",
+        "name_en": "Enpō",
+        "start_date": "1673-10-30"
+    },
+    {
+        "name_ja": "寛文",
+        "name_en": "Kanbun",
+        "start_date": "1661-05-23"
+    },
+    {
+        "name_ja": "万治",
+        "name_en": "Manji",
+        "start_date": "1658-08-21"
+    },
+    {
+        "name_ja": "明暦",
+        "name_en": "Meireki",
+        "start_date": "1655-05-18"
+    },
+    {
+        "name_ja": "承応",
+        "name_en": "Jōō",
+        "start_date": "1652-10-20"
+    },
+    {
+        "name_ja": "慶安",
+        "name_en": "Keian",
+        "start_date": "1648-04-07"
+    },
+    {
+        "name_ja": "正保",
+        "name_en": "Shōhō",
+        "start_date": "1645-01-13"
+    },
+    {
+        "name_ja": "寛永",
+        "name_en": "Kan'ei",
+        "start_date": "1624-04-17"
+    },
+    {
+        "name_ja": "元和",
+        "name_en": "Genna",
+        "start_date": "1615-09-05"
+    },
+    {
+        "name_ja": "慶長",
+        "name_en": "Keichō",
+        "start_date": "1596-12-16"
+    },
+    {
+        "name_ja": "文禄",
+        "name_en": "Bunroku",
+        "start_date": "1593-01-10"
+    },
+    {
+        "name_ja": "天正",
+        "name_en": "Tenshō",
+        "start_date": "1573-08-25"
+    },
+    {
+        "name_ja": "元亀",
+        "name_en": "Genki",
+        "start_date": "1570-05-27"
+    },
+    {
+        "name_ja": "永禄",
+        "name_en": "Eiroku",
+        "start_date": "1558-03-18"
+    },
+    {
+        "name_ja": "弘治",
+        "name_en": "Kōji",
+        "start_date": "1555-11-07"
+    },
+    {
+        "name_ja": "天文",
+        "name_en": "Tenbun",
+        "start_date": "1532-08-29"
+    },
+    {
+        "name_ja": "享禄",
+        "name_en": "Kyōroku",
+        "start_date": "1528-09-03"
+    },
+    {
+        "name_ja": "大永",
+        "name_en": "Taiei",
+        "start_date": "1521-09-23"
+    },
+    {
+        "name_ja": "永正",
+        "name_en": "Eishō",
+        "start_date": "1504-03-16"
+    },
+    {
+        "name_ja": "文亀",
+        "name_en": "Bunki",
+        "start_date": "1501-03-18"
+    },
+    {
+        "name_ja": "明応",
+        "name_en": "Meiō",
+        "start_date": "1492-08-12"
+    },
+    {
+        "name_ja": "延徳",
+        "name_en": "Entoku",
+        "start_date": "1489-09-16"
+    },
+    {
+        "name_ja": "長享",
+        "name_en": "Chōkyō",
+        "start_date": "1487-08-09"
+    },
+    {
+        "name_ja": "文明",
+        "name_en": "Bunmei",
+        "start_date": "1469-06-08"
+    },
+    {
+        "name_ja": "応仁",
+        "name_en": "Ōnin",
+        "start_date": "1467-04-09"
+    },
+    {
+        "name_ja": "文正",
+        "name_en": "Bunshō",
+        "start_date": "1466-03-14"
+    },
+    {
+        "name_ja": "寛正",
+        "name_en": "Kanshō",
+        "start_date": "1461-02-01"
+    },
+    {
+        "name_ja": "長禄",
+        "name_en": "Chōroku",
+        "start_date": "1457-10-16"
+    },
+    {
+        "name_ja": "康正",
+        "name_en": "Kōshō",
+        "start_date": "1455-09-06"
+    },
+    {
+        "name_ja": "享徳",
+        "name_en": "Kyōtoku",
+        "start_date": "1452-08-10"
+    },
+    {
+        "name_ja": "宝徳",
+        "name_en": "Hōtoku",
+        "start_date": "1449-08-16"
+    },
+    {
+        "name_ja": "文安",
+        "name_en": "Bun'an",
+        "start_date": "1444-02-23"
+    },
+    {
+        "name_ja": "嘉吉",
+        "name_en": "Kakitsu",
+        "start_date": "1441-03-10"
+    },
+    {
+        "name_ja": "永享",
+        "name_en": "Eikyō",
+        "start_date": "1429-10-03"
+    },
+    {
+        "name_ja": "正長",
+        "name_en": "Shōchō",
+        "start_date": "1428-06-10"
+    },
+    {
+        "name_ja": "応永",
+        "name_en": "Ōei",
+        "start_date": "1394-08-02"
+    },
+    {
+        "name_ja": "明徳",
+        "name_en": "Meitoku",
+        "start_date": "1390-04-12"
+    },
+    {
+        "name_ja": "康応",
+        "name_en": "Kōō",
+        "start_date": "1389-03-07"
+    },
+    {
+        "name_ja": "嘉慶",
+        "name_en": "Kakei",
+        "start_date": "1387-10-05"
+    },
+    {
+        "name_ja": "至徳",
+        "name_en": "Shitoku",
+        "start_date": "1384-03-19"
+    },
+    {
+        "name_ja": "永徳",
+        "name_en": "Eitoku",
+        "start_date": "1381-03-20"
+    },
+    {
+        "name_ja": "康暦",
+        "name_en": "Kōryaku",
+        "start_date": "1379-04-09"
+    },
+    {
+        "name_ja": "永和",
+        "name_en": "Eiwa",
+        "start_date": "1375-03-29"
+    },
+    {
+        "name_ja": "応安",
+        "name_en": "Ōan",
+        "start_date": "1368-03-07"
+    },
+    {
+        "name_ja": "貞治",
+        "name_en": "Jōji",
+        "start_date": "1362-10-11"
+    },
+    {
+        "name_ja": "康安",
+        "name_en": "Kōan",
+        "start_date": "1361-05-04"
+    },
+    {
+        "name_ja": "延文",
+        "name_en": "Enbun",
+        "start_date": "1356-04-29"
+    },
+    {
+        "name_ja": "文和",
+        "name_en": "Bunna",
+        "start_date": "1352-11-04"
+    },
+    {
+        "name_ja": "観応",
+        "name_en": "Kannō",
+        "start_date": "1350-04-04"
+    },
+    {
+        "name_ja": "貞和",
+        "name_en": "Jōwa",
+        "start_date": "1345-11-15"
+    },
+    {
+        "name_ja": "康永",
+        "name_en": "Kōei",
+        "start_date": "1342-06-01"
+    },
+    {
+        "name_ja": "暦応",
+        "name_en": "Ryakuō",
+        "start_date": "1338-10-11"
+    },
+    {
+        "name_ja": "元中",
+        "name_en": "Genchū",
+        "start_date": "1384-05-18"
+    },
+    {
+        "name_ja": "弘和",
+        "name_en": "Kōwa",
+        "start_date": "1381-03-06"
+    },
+    {
+        "name_ja": "天授",
+        "name_en": "Tenju",
+        "start_date": "1375-06-26"
+    },
+    {
+        "name_ja": "建徳",
+        "name_en": "Kentoku",
+        "start_date": "1370-08-16"
+    },
+    {
+        "name_ja": "正平",
+        "name_en": "Shōhei",
+        "start_date": "1347-01-20"
+    },
+    {
+        "name_ja": "興国",
+        "name_en": "Kōkoku",
+        "start_date": "1340-05-25"
+    },
+    {
+        "name_ja": "延元",
+        "name_en": "Engen",
+        "start_date": "1336-04-11"
+    },
+    {
+        "name_ja": "建武",
+        "name_en": "Kenmu",
+        "start_date": "1334-03-05"
+    },
+    {
+        "name_ja": "正慶",
+        "name_en": "Shōkei",
+        "start_date": "1332-05-23"
+    },
+    {
+        "name_ja": "元弘",
+        "name_en": "Genkō",
+        "start_date": "1331-09-11"
+    },
+    {
+        "name_ja": "元徳",
+        "name_en": "Gentoku",
+        "start_date": "1329-09-22"
+    },
+    {
+        "name_ja": "嘉暦",
+        "name_en": "Karyaku",
+        "start_date": "1326-05-28"
+    },
+    {
+        "name_ja": "正中",
+        "name_en": "Shōchū",
+        "start_date": "1324-12-25"
+    },
+    {
+        "name_ja": "元亨",
+        "name_en": "Genkō",
+        "start_date": "1321-03-22"
+    },
+    {
+        "name_ja": "元応",
+        "name_en": "Gen'ō",
+        "start_date": "1319-05-18"
+    },
+    {
+        "name_ja": "文保",
+        "name_en": "Bunpō",
+        "start_date": "1317-03-16"
+    },
+    {
+        "name_ja": "正和",
+        "name_en": "Shōwa",
+        "start_date": "1312-04-27"
+    },
+    {
+        "name_ja": "応長",
+        "name_en": "Ōchō",
+        "start_date": "1311-05-17"
+    },
+    {
+        "name_ja": "延慶",
+        "name_en": "Enkyō",
+        "start_date": "1308-11-22"
+    },
+    {
+        "name_ja": "徳治",
+        "name_en": "Tokuji",
+        "start_date": "1307-01-18"
+    },
+    {
+        "name_ja": "嘉元",
+        "name_en": "Kagen",
+        "start_date": "1303-09-16"
+    },
+    {
+        "name_ja": "乾元",
+        "name_en": "Kengen",
+        "start_date": "1302-12-10"
+    },
+    {
+        "name_ja": "正安",
+        "name_en": "Shōan",
+        "start_date": "1299-05-25"
+    },
+    {
+        "name_ja": "永仁",
+        "name_en": "Einin",
+        "start_date": "1293-09-06"
+    },
+    {
+        "name_ja": "正応",
+        "name_en": "Shōō",
+        "start_date": "1288-05-29"
+    },
+    {
+        "name_ja": "弘安",
+        "name_en": "Kōan",
+        "start_date": "1278-03-23"
+    },
+    {
+        "name_ja": "建治",
+        "name_en": "Kenji",
+        "start_date": "1275-05-22"
+    },
+    {
+        "name_ja": "文永",
+        "name_en": "Bun'ei",
+        "start_date": "1264-03-27"
+    },
+    {
+        "name_ja": "弘長",
+        "name_en": "Kōchō",
+        "start_date": "1261-03-22"
+    },
+    {
+        "name_ja": "文応",
+        "name_en": "Bun'ō",
+        "start_date": "1260-05-24"
+    },
+    {
+        "name_ja": "正元",
+        "name_en": "Shōgen",
+        "start_date": "1259-04-20"
+    },
+    {
+        "name_ja": "正嘉",
+        "name_en": "Shōka",
+        "start_date": "1257-03-31"
+    },
+    {
+        "name_ja": "康元",
+        "name_en": "Kōgen",
+        "start_date": "1256-10-24"
+    },
+    {
+        "name_ja": "建長",
+        "name_en": "Kenchō",
+        "start_date": "1249-05-02"
+    },
+    {
+        "name_ja": "宝治",
+        "name_en": "Hōji",
+        "start_date": "1247-04-05"
+    },
+    {
+        "name_ja": "寛元",
+        "name_en": "Kangen",
+        "start_date": "1243-03-18"
+    },
+    {
+        "name_ja": "仁治",
+        "name_en": "Ninji",
+        "start_date": "1240-08-05"
+    },
+    {
+        "name_ja": "延応",
+        "name_en": "En'ō",
+        "start_date": "1239-03-13"
+    },
+    {
+        "name_ja": "暦仁",
+        "name_en": "Ryakunin",
+        "start_date": "1238-12-30"
+    },
+    {
+        "name_ja": "嘉禎",
+        "name_en": "Katei",
+        "start_date": "1235-11-01"
+    },
+    {
+        "name_ja": "文暦",
+        "name_en": "Bunryaku",
+        "start_date": "1234-11-27"
+    },
+    {
+        "name_ja": "天福",
+        "name_en": "Tenpuku",
+        "start_date": "1233-05-25"
+    },
+    {
+        "name_ja": "貞永",
+        "name_en": "Jōei",
+        "start_date": "1232-04-23"
+    },
+    {
+        "name_ja": "寛喜",
+        "name_en": "Kangi",
+        "start_date": "1229-03-31"
+    },
+    {
+        "name_ja": "安貞",
+        "name_en": "Antei",
+        "start_date": "1228-01-18"
+    },
+    {
+        "name_ja": "嘉禄",
+        "name_en": "Karoku",
+        "start_date": "1225-05-28"
+    },
+    {
+        "name_ja": "元仁",
+        "name_en": "Gennin",
+        "start_date": "1224-12-31"
+    },
+    {
+        "name_ja": "貞応",
+        "name_en": "Jōō",
+        "start_date": "1222-05-25"
+    },
+    {
+        "name_ja": "承久",
+        "name_en": "Jōkyū",
+        "start_date": "1219-05-27"
+    },
+    {
+        "name_ja": "建保",
+        "name_en": "Kenpō",
+        "start_date": "1214-01-18"
+    },
+    {
+        "name_ja": "建暦",
+        "name_en": "Kenryaku",
+        "start_date": "1211-04-23"
+    },
+    {
+        "name_ja": "承元",
+        "name_en": "Jōgen",
+        "start_date": "1207-11-16"
+    },
+    {
+        "name_ja": "建永",
+        "name_en": "Ken'ei",
+        "start_date": "1206-06-05"
+    },
+    {
+        "name_ja": "元久",
+        "name_en": "Genkyū",
+        "start_date": "1204-03-23"
+    },
+    {
+        "name_ja": "建仁",
+        "name_en": "Kennin",
+        "start_date": "1201-03-19"
+    },
+    {
+        "name_ja": "正治",
+        "name_en": "Shōji",
+        "start_date": "1199-05-23"
+    },
+    {
+        "name_ja": "建久",
+        "name_en": "Kenkyū",
+        "start_date": "1190-05-16"
+    },
+    {
+        "name_ja": "文治",
+        "name_en": "Bunji",
+        "start_date": "1185-09-09"
+    },
+    {
+        "name_ja": "元暦",
+        "name_en": "Genryaku",
+        "start_date": "1184-05-27"
+    },
+    {
+        "name_ja": "寿永",
+        "name_en": "Juei",
+        "start_date": "1182-06-29"
+    },
+    {
+        "name_ja": "養和",
+        "name_en": "Yōwa",
+        "start_date": "1181-08-25"
+    },
+    {
+        "name_ja": "治承",
+        "name_en": "Jishō",
+        "start_date": "1177-08-29"
+    },
+    {
+        "name_ja": "安元",
+        "name_en": "Angen",
+        "start_date": "1175-08-16"
+    },
+    {
+        "name_ja": "承安",
+        "name_en": "Jōan",
+        "start_date": "1171-05-27"
+    },
+    {
+        "name_ja": "嘉応",
+        "name_en": "Kaō",
+        "start_date": "1169-05-06"
+    },
+    {
+        "name_ja": "仁安",
+        "name_en": "Nin'an",
+        "start_date": "1166-09-23"
+    },
+    {
+        "name_ja": "永万",
+        "name_en": "Eiman",
+        "start_date": "1165-07-14"
+    },
+    {
+        "name_ja": "長寛",
+        "name_en": "Chōkan",
+        "start_date": "1163-05-04"
+    },
+    {
+        "name_ja": "応保",
+        "name_en": "Ōhō",
+        "start_date": "1161-09-24"
+    },
+    {
+        "name_ja": "永暦",
+        "name_en": "Eiryaku",
+        "start_date": "1160-02-18"
+    },
+    {
+        "name_ja": "平治",
+        "name_en": "Heiji",
+        "start_date": "1159-05-09"
+    },
+    {
+        "name_ja": "保元",
+        "name_en": "Hōgen",
+        "start_date": "1156-05-18"
+    },
+    {
+        "name_ja": "久寿",
+        "name_en": "Kyūju",
+        "start_date": "1154-12-04"
+    },
+    {
+        "name_ja": "仁平",
+        "name_en": "Ninpei",
+        "start_date": "1151-02-14"
+    },
+    {
+        "name_ja": "久安",
+        "name_en": "Kyūan",
+        "start_date": "1145-08-12"
+    },
+    {
+        "name_ja": "天養",
+        "name_en": "Tenyō",
+        "start_date": "1144-03-28"
+    },
+    {
+        "name_ja": "康治",
+        "name_en": "Kōji",
+        "start_date": "1142-05-25"
+    },
+    {
+        "name_ja": "永治",
+        "name_en": "Eiji",
+        "start_date": "1141-08-13"
+    },
+    {
+        "name_ja": "保延",
+        "name_en": "Hōen",
+        "start_date": "1135-06-10"
+    },
+    {
+        "name_ja": "長承",
+        "name_en": "Chōshō",
+        "start_date": "1132-09-21"
+    },
+    {
+        "name_ja": "天承",
+        "name_en": "Tenshō",
+        "start_date": "1131-02-28"
+    },
+    {
+        "name_ja": "大治",
+        "name_en": "Daiji",
+        "start_date": "1126-02-15"
+    },
+    {
+        "name_ja": "天治",
+        "name_en": "Tenji",
+        "start_date": "1124-05-18"
+    },
+    {
+        "name_ja": "保安",
+        "name_en": "Hōan",
+        "start_date": "1120-05-09"
+    },
+    {
+        "name_ja": "元永",
+        "name_en": "Gen'ei",
+        "start_date": "1118-04-25"
+    },
+    {
+        "name_ja": "永久",
+        "name_en": "Eikyū",
+        "start_date": "1113-08-25"
+    },
+    {
+        "name_ja": "天永",
+        "name_en": "Ten'ei",
+        "start_date": "1110-07-31"
+    },
+    {
+        "name_ja": "天仁",
+        "name_en": "Tennin",
+        "start_date": "1108-09-09"
+    },
+    {
+        "name_ja": "嘉承",
+        "name_en": "Kashō",
+        "start_date": "1106-05-13"
+    },
+    {
+        "name_ja": "長治",
+        "name_en": "Chōji",
+        "start_date": "1104-03-08"
+    },
+    {
+        "name_ja": "康和",
+        "name_en": "Kōwa",
+        "start_date": "1099-09-15"
+    },
+    {
+        "name_ja": "承徳",
+        "name_en": "Jōtoku",
+        "start_date": "1097-12-27"
+    },
+    {
+        "name_ja": "永長",
+        "name_en": "Eichō",
+        "start_date": "1097-01-03"
+    },
+    {
+        "name_ja": "嘉保",
+        "name_en": "Kahō",
+        "start_date": "1095-01-23"
+    },
+    {
+        "name_ja": "寛治",
+        "name_en": "Kanji",
+        "start_date": "1087-05-11"
+    },
+    {
+        "name_ja": "応徳",
+        "name_en": "Ōtoku",
+        "start_date": "1084-03-15"
+    },
+    {
+        "name_ja": "永保",
+        "name_en": "Eihō",
+        "start_date": "1081-03-22"
+    },
+    {
+        "name_ja": "承暦",
+        "name_en": "Jōryaku",
+        "start_date": "1077-12-05"
+    },
+    {
+        "name_ja": "承保",
+        "name_en": "Jōhō",
+        "start_date": "1074-09-16"
+    },
+    {
+        "name_ja": "延久",
+        "name_en": "Enkyū",
+        "start_date": "1069-05-06"
+    },
+    {
+        "name_ja": "治暦",
+        "name_en": "Jiryaku",
+        "start_date": "1065-09-04"
+    },
+    {
+        "name_ja": "康平",
+        "name_en": "Kōhei",
+        "start_date": "1058-09-19"
+    },
+    {
+        "name_ja": "天喜",
+        "name_en": "Tengi",
+        "start_date": "1053-02-02"
+    },
+    {
+        "name_ja": "永承",
+        "name_en": "Eishō",
+        "start_date": "1046-05-22"
+    },
+    {
+        "name_ja": "寛徳",
+        "name_en": "Kantoku",
+        "start_date": "1044-12-16"
+    },
+    {
+        "name_ja": "長久",
+        "name_en": "Chōkyū",
+        "start_date": "1040-12-16"
+    },
+    {
+        "name_ja": "長暦",
+        "name_en": "Chōryaku",
+        "start_date": "1037-05-09"
+    },
+    {
+        "name_ja": "長元",
+        "name_en": "Chōgen",
+        "start_date": "1028-08-18"
+    },
+    {
+        "name_ja": "万寿",
+        "name_en": "Manju",
+        "start_date": "1024-08-19"
+    },
+    {
+        "name_ja": "治安",
+        "name_en": "Jian",
+        "start_date": "1021-03-17"
+    },
+    {
+        "name_ja": "寛仁",
+        "name_en": "Kannin",
+        "start_date": "1017-05-21"
+    },
+    {
+        "name_ja": "長和",
+        "name_en": "Chōwa",
+        "start_date": "1013-02-08"
+    },
+    {
+        "name_ja": "寛弘",
+        "name_en": "Kankō",
+        "start_date": "1004-08-08"
+    },
+    {
+        "name_ja": "長保",
+        "name_en": "Chōhō",
+        "start_date": "0999-02-01"
+    },
+    {
+        "name_ja": "長徳",
+        "name_en": "Chōtoku",
+        "start_date": "0995-03-25"
+    },
+    {
+        "name_ja": "正暦",
+        "name_en": "Shōryaku",
+        "start_date": "0990-11-26"
+    },
+    {
+        "name_ja": "永祚",
+        "name_en": "Eiso",
+        "start_date": "0989-09-10"
+    },
+    {
+        "name_ja": "永延",
+        "name_en": "Eien",
+        "start_date": "0987-05-05"
+    },
+    {
+        "name_ja": "寛和",
+        "name_en": "Kanna",
+        "start_date": "0985-05-19"
+    },
+    {
+        "name_ja": "永観",
+        "name_en": "Eikan",
+        "start_date": "0983-05-29"
+    },
+    {
+        "name_ja": "天元",
+        "name_en": "Tengen",
+        "start_date": "0978-12-31"
+    },
+    {
+        "name_ja": "貞元",
+        "name_en": "Jōgen",
+        "start_date": "0976-08-11"
+    },
+    {
+        "name_ja": "天延",
+        "name_en": "Ten'en",
+        "start_date": "0974-01-16"
+    },
+    {
+        "name_ja": "天禄",
+        "name_en": "Tenroku",
+        "start_date": "0970-05-03"
+    },
+    {
+        "name_ja": "安和",
+        "name_en": "Anna",
+        "start_date": "0968-09-08"
+    },
+    {
+        "name_ja": "康保",
+        "name_en": "Kōhō",
+        "start_date": "0964-08-19"
+    },
+    {
+        "name_ja": "応和",
+        "name_en": "Ōwa",
+        "start_date": "0961-03-05"
+    },
+    {
+        "name_ja": "天徳",
+        "name_en": "Tentoku",
+        "start_date": "0957-11-21"
+    },
+    {
+        "name_ja": "天暦",
+        "name_en": "Tenryaku",
+        "start_date": "0947-05-15"
+    },
+    {
+        "name_ja": "天慶",
+        "name_en": "Tengyō",
+        "start_date": "0938-06-22"
+    },
+    {
+        "name_ja": "承平",
+        "name_en": "Jōhei",
+        "start_date": "0931-05-16"
+    },
+    {
+        "name_ja": "延長",
+        "name_en": "Enchō",
+        "start_date": "0923-05-29"
+    },
+    {
+        "name_ja": "延喜",
+        "name_en": "Engi",
+        "start_date": "0901-08-31"
+    },
+    {
+        "name_ja": "昌泰",
+        "name_en": "Shōtai",
+        "start_date": "0898-05-20"
+    },
+    {
+        "name_ja": "寛平",
+        "name_en": "Kanpyō",
+        "start_date": "0889-05-30"
+    },
+    {
+        "name_ja": "仁和",
+        "name_en": "Ninna",
+        "start_date": "0885-03-11"
+    },
+    {
+        "name_ja": "元慶",
+        "name_en": "Gangyō",
+        "start_date": "0877-06-01"
+    },
+    {
+        "name_ja": "貞観",
+        "name_en": "Jōgan",
+        "start_date": "0859-05-20"
+    },
+    {
+        "name_ja": "天安",
+        "name_en": "Ten'an",
+        "start_date": "0857-03-20"
+    },
+    {
+        "name_ja": "斉衡",
+        "name_en": "Saikō",
+        "start_date": "0854-12-23"
+    },
+    {
+        "name_ja": "仁寿",
+        "name_en": "Ninju",
+        "start_date": "0851-06-01"
+    },
+    {
+        "name_ja": "嘉祥",
+        "name_en": "Kashō",
+        "start_date": "0848-07-16"
+    },
+    {
+        "name_ja": "承和",
+        "name_en": "Jōwa",
+        "start_date": "0834-02-14"
+    },
+    {
+        "name_ja": "天長",
+        "name_en": "Tenchō",
+        "start_date": "0824-02-08"
+    },
+    {
+        "name_ja": "弘仁",
+        "name_en": "Kōnin",
+        "start_date": "0810-10-20"
+    },
+    {
+        "name_ja": "大同",
+        "name_en": "Daidō",
+        "start_date": "0806-06-08"
+    },
+    {
+        "name_ja": "延暦",
+        "name_en": "Enryaku",
+        "start_date": "0782-09-30"
+    },
+    {
+        "name_ja": "天応",
+        "name_en": "Ten'ō",
+        "start_date": "0781-01-30"
+    },
+    {
+        "name_ja": "宝亀",
+        "name_en": "Hōki",
+        "start_date": "0770-10-23"
+    },
+    {
+        "name_ja": "神護景雲",
+        "name_en": "Jingokeiun",
+        "start_date": "0767-09-13"
+    },
+    {
+        "name_ja": "天平神護",
+        "name_en": "Tenpyōjingo",
+        "start_date": "0765-02-01"
+    },
+    {
+        "name_ja": "天平宝字",
+        "name_en": "Tenpyōhōji",
+        "start_date": "0757-09-06"
+    },
+    {
+        "name_ja": "天平勝宝",
+        "name_en": "Tenpyōshōhō",
+        "start_date": "0749-08-19"
+    },
+    {
+        "name_ja": "天平感宝",
+        "name_en": "Tenpyōkanpō",
+        "start_date": "0749-05-04"
+    },
+    {
+        "name_ja": "天平",
+        "name_en": "Tenpyō",
+        "start_date": "0729-09-02"
+    },
+    {
+        "name_ja": "神亀",
+        "name_en": "Jinki",
+        "start_date": "0724-03-03"
+    },
+    {
+        "name_ja": "養老",
+        "name_en": "Yōrō",
+        "start_date": "0717-12-24"
+    },
+    {
+        "name_ja": "霊亀",
+        "name_en": "Reiki",
+        "start_date": "0715-10-03"
+    }
 ]

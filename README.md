@@ -7,9 +7,8 @@ The `jpdatetime` library extends Python's `datetime` to support Japanese eras (�
 ## Features
 - **Parsing**: Convert Japanese era date strings to Gregorian dates using the `strptime` method.
 - **Formatting**: Convert Gregorian dates to Japanese era formatted strings using the `strftime` method.
-- **Supported Eras**: Meiji (明治), Taisho (大正), Showa (昭和), Heisei (平成), and Reiwa (令和).
+- **Supported Eras**: Support for conversion of eras from Reiki (霊亀), which began on October 3, 715, to Reiwa (令和).
 - **First Year Notation**: Supports the first-year notation (元年) for each era.
-- **Custom Formatting**: Allows custom formatting that includes both Japanese and Gregorian dates.
 
 ## Installation
 `jpdatetime` is available for installation via pip.
@@ -98,14 +97,17 @@ print(formatted_date)  # Output: "R1/05/01"
 `%Y`, `%m`, `%d`, `%B`, etc.: [Standard datetime format](https://docs.python.org/3/library/datetime.html#format-codes) specifiers.
 
 ## Limitation
-- **Supported Eras**: The library supports Meiji (from September 8, 1868) onwards. Eras prior to Meiji are not supported.
-- **Date Range**: Parsing and formatting are limited to the supported eras (Meiji, Taisho, Showa, Heisei, and Reiwa).
+- **Supported Eras**: The library supports Reiki (from October 3, 715) onwards. Eras prior to Reiki are not supported.
 - **Future Eras**: The library does not account for hypothetical future eras not explicitly defined in the eras list.
-- **Locale Considerations**: Month names and other locale-specific strings are in English. Localization for other languages is not provided.
+- **Conversion rule of abbrivation Era**: When converting from abbreviated era names (such as Rei, Hei, or R, H) to a date-time format, duplicate initial letters may exist among era names. In cases of duplication, the conversion defaults to the newer era.
 
 ## Contributing
 
 Feel free to open issues or submit pull requests if you have suggestions or improvements.
+
+## Reference
+
+The era conversion in this library is based on the [List of Japanese Eras on Wikipedia](https://ja.wikipedia.org/wiki/%E5%85%83%E5%8F%B7%E4%B8%80%E8%A6%A7_(%E6%97%A5%E6%9C%AC).
 
 ## License
 
