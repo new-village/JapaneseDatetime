@@ -136,11 +136,13 @@ class Testjpdatetime(unittest.TestCase):
         self.test_cases_strptime_G = [
             # Reiwa Era
             ("令和05年10月30日", "%G年%m月%d日", datetime(2023, 10, 30)),
+            ("令和０５年１０月３０日", "%G年%m月%d日", datetime(2023, 10, 30)),
             ("令和5年10月30日", "%-G年%m月%d日", datetime(2023, 10, 30)),
             ("令和元年05月01日", "%G年%m月%d日", datetime(2019, 5, 1)),
             ("令和元年05月01日", "%-G年%m月%d日", datetime(2019, 5, 1)),
             # Heisei Era
             ("平成30年04月01日", "%G年%m月%d日", datetime(2018, 4, 1)),
+            ("平成３０年０４月０１日", "%G年%m月%d日", datetime(2018, 4, 1)),
             ("平成30年04月01日", "%-G年%m月%d日", datetime(2018, 4, 1)),
             ("平成元年01月08日", "%G年%m月%d日", datetime(1989, 1, 8)),
             ("平成元年01月08日", "%-G年%m月%d日", datetime(1989, 1, 8)),
@@ -169,6 +171,7 @@ class Testjpdatetime(unittest.TestCase):
         self.test_cases_strptime_g = [
             # Reiwa Era
             ("令05年10月30日", "%g年%m月%d日", datetime(2023, 10, 30)),
+            ("令０５年１０月３０日", "%g年%m月%d日", datetime(2023, 10, 30)),
             ("令5年10月30日", "%-g年%m月%d日", datetime(2023, 10, 30)),
             ("令01年05月01日", "%g年%m月%d日", datetime(2019, 5, 1)),
             ("令1年05月01日", "%-g年%m月%d日", datetime(2019, 5, 1)),
@@ -198,6 +201,7 @@ class Testjpdatetime(unittest.TestCase):
         self.test_cases_strptime_E = [
             # Reiwa Era
             ("Reiwa 05, October 30", "%E, %B %d", datetime(2023, 10, 30)),
+            ("Ｒｅｉｗａ　０５，　Ｏｃｔｏｂｅｒ　３０", "%E, %B %d", datetime(2023, 10, 30)),
             ("Reiwa 5, October 30", "%-E, %B %d", datetime(2023, 10, 30)),
             ("Reiwa 01, May 01", "%E, %B %d", datetime(2019, 5, 1)),
             ("Reiwa 1, May 01", "%-E, %B %d", datetime(2019, 5, 1)),
@@ -227,6 +231,7 @@ class Testjpdatetime(unittest.TestCase):
         self.test_cases_strptime_e = [
             # Reiwa Era
             ("R05/10/30", "%e/%m/%d", datetime(2023, 10, 30)),
+            ("Ｒ０５／１０／３０", "%e/%m/%d", datetime(2023, 10, 30)),
             ("R5/10/30", "%-e/%m/%d", datetime(2023, 10, 30)),
             ("R01/05/01", "%e/%m/%d", datetime(2019, 5, 1)),
             ("R1/05/01", "%-e/%m/%d", datetime(2019, 5, 1)),
