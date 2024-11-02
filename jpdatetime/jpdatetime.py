@@ -2,6 +2,7 @@ import os
 import re
 import json
 from datetime import datetime
+import unicodedata
 
 # Load the eras data from an external JSON file
 module_dir = os.path.dirname(os.path.abspath(__file__))
@@ -27,6 +28,7 @@ class jpdatetime(datetime):
 
     @classmethod
     def strptime(cls, date_string, format_string):
+        date_string = unicodedata.normalize('NFKC', date_string)
         # Check if custom era format codes are in the format string
         if any(re.search(f'%[-#]*{code}', format_string) for code in cls.custom_formats):
             # Split the format string into tokens
