@@ -13,38 +13,37 @@ eras = [
 class jpdatetime(datetime):
     # Unified custom format codes mapping to their handler functions
     custom_formats = {
-        '%G': {'parse': 'parse_full_jp_era', 'format': 'format_full_jp_era'},
-        '%g': {'parse': 'parse_abbr_jp_era', 'format': 'format_abbr_jp_era'},
-        '%E': {'parse': 'parse_full_en_era', 'format': 'format_full_en_era'},
-        '%e': {'parse': 'parse_abbr_en_era', 'format': 'format_abbr_en_era'},
+        'G': {'parse': 'parse_full_jp_era', 'format': 'format_full_jp_era'},
+        'g': {'parse': 'parse_abbr_jp_era', 'format': 'format_abbr_jp_era'},
+        'E': {'parse': 'parse_full_en_era', 'format': 'format_full_en_era'},
+        'e': {'parse': 'parse_abbr_en_era', 'format': 'format_abbr_en_era'},
     }
 
     @classmethod
     def strptime(cls, date_string, format_string):
         # Check if custom era format codes are in the format string
-        if any(code in format_string for code in cls.custom_formats):
+        if any(re.search(f'%[-#]*{code}', format_string) for code in cls.custom_formats):
             # Split the format string into tokens
             tokens = cls._tokenize_format_string(format_string)
             regex_pattern = ''
             for token_type, token_value in tokens:
                 if token_type == 'format_code':
-                    if token_value in cls.custom_formats:
+                    modifier, code = token_value
+                    if code in cls.custom_formats:
                         # Get the regex pattern for the custom format code
-                        handler_name = cls.custom_formats[token_value]['parse']
+                        handler_name = cls.custom_formats[code]['parse']
                         handler = getattr(cls, f"_get_regex_{handler_name}")
                         regex_pattern += handler()
                     else:
                         # Use the standard datetime regex patterns
-                        regex_pattern += cls._escape_regex(token_value)
+                        regex_pattern += cls._escape_regex('%' + code)
                 else:
                     # Escape literals in the regex pattern
                     regex_pattern += re.escape(token_value)
-
             # Compile the regex pattern
             match = re.match(regex_pattern, date_string)
             if not match:
                 raise ValueError(f"time data '{date_string}' does not match format '{format_string}'")
-
             # Extract date components from matched groups
             components = match.groupdict()
             year, month, day = cls._extract_date_components(components)
@@ -56,19 +55,20 @@ class jpdatetime(datetime):
 
     def strftime(self, format_string):
         # Check if custom era format codes are in the format string
-        if any(code in format_string for code in self.custom_formats):
+        if any(re.search(f'%[-#]*{code}', format_string) for code in self.custom_formats):
             tokens = self._tokenize_format_string(format_string)
             result = ''
             for token_type, token_value in tokens:
                 if token_type == 'format_code':
-                    if token_value in self.custom_formats:
+                    modifier, code = token_value
+                    if code in self.custom_formats:
                         # Call the handler function for the custom format code
-                        handler_name = self.custom_formats[token_value]['format']
+                        handler_name = self.custom_formats[code]['format']
                         handler = getattr(self, f"_{handler_name}")
-                        result += handler()
+                        result += handler(modifier)
                     else:
                         # Use standard datetime strftime for other format codes
-                        result += super().strftime(token_value)
+                        result += super().strftime('%' + modifier + code)
                 else:
                     # Append literals as is
                     result += token_value
@@ -79,13 +79,20 @@ class jpdatetime(datetime):
 
     @classmethod
     def _tokenize_format_string(cls, format_string):
-        """Tokenizes the format string into format codes and literals."""
+        """Tokenizes the format string into format codes and literals, including modifiers."""
         tokens = []
-        pattern = re.compile(r'(%.)')
+        # Regex pattern to match format codes with optional modifiers
+        pattern = re.compile(r'(%[-#]*[a-zA-Z])')
         parts = pattern.split(format_string)
         for part in parts:
-            if part.startswith('%') and len(part) > 1:
-                tokens.append(('format_code', part))
+            if part.startswith('%'):
+                # Extract modifier and code
+                modifier_match = re.match(r'%([-#]*)([a-zA-Z])', part)
+                if modifier_match:
+                    modifier, code = modifier_match.groups()
+                    tokens.append(('format_code', (modifier, code)))
+                else:
+                    tokens.append(('literal', part))
             else:
                 tokens.append(('literal', part))
         return tokens
@@ -183,35 +190,65 @@ class jpdatetime(datetime):
                 return era
         raise ValueError("Date out of range for Japanese eras")
 
-    def _format_full_jp_era(self):
+    def _format_full_jp_era(self, modifier=''):
         """Formats the date using full Japanese era name."""
         era = self._get_era_info()
         era_year = self.year - era['start_date'].year + 1
         if era_year == 1:
             era_year_str = '元'
         else:
-            era_year_str = f"{era_year:02d}"  # Zero-pad to two digits
+            if '-' in modifier or '#' in modifier:
+                era_year_str = str(era_year)
+            else:
+                era_year_str = f"{era_year:02d}"  # Zero-pad to two digits
         return f"{era['name_ja']}{era_year_str}"
 
-    def _format_abbr_jp_era(self):
+    def _format_abbr_jp_era(self, modifier=''):
         """Formats the date using abbreviated Japanese era name."""
         era = self._get_era_info()
-        era_year = self.year - era['start_date'].year + 1
         era_abbr = era['name_ja'][0]
-        era_year_str = f"{era_year:02d}"  # Zero-pad to two digits
+        era_year = self.year - era['start_date'].year + 1
+        if era_year == 1:
+            if '-' in modifier or '#' in modifier:
+                era_year_str = '1'
+            else:
+                era_year_str = '01'
+        else:
+            if '-' in modifier or '#' in modifier:
+                era_year_str = str(era_year)
+            else:
+                era_year_str = f"{era_year:02d}"
         return f"{era_abbr}{era_year_str}"
 
-    def _format_full_en_era(self):
+    def _format_full_en_era(self, modifier=''):
         """Formats the date using full English era name."""
         era = self._get_era_info()
         era_year = self.year - era['start_date'].year + 1
-        era_year_str = f"{era_year:02d}"  # Zero-pad to two digits
+        if era_year == 1:
+            if '-' in modifier or '#' in modifier:
+                era_year_str = '1'
+            else:
+                era_year_str = '01'
+        else:
+            if '-' in modifier or '#' in modifier:
+                era_year_str = str(era_year)
+            else:
+                era_year_str = f"{era_year:02d}"
         return f"{era['name_en']} {era_year_str}"
 
-    def _format_abbr_en_era(self):
+    def _format_abbr_en_era(self, modifier=''):
         """Formats the date using abbreviated English era name."""
         era = self._get_era_info()
-        era_year = self.year - era['start_date'].year + 1
         era_abbr = era['name_en'][0]
-        era_year_str = f"{era_year:02d}"  # Zero-pad to two digits
+        era_year = self.year - era['start_date'].year + 1
+        if era_year == 1:
+            if '-' in modifier or '#' in modifier:
+                era_year_str = '1'
+            else:
+                era_year_str = '01'
+        else:
+            if '-' in modifier or '#' in modifier:
+                era_year_str = str(era_year)
+            else:
+                era_year_str = f"{era_year:02d}"
         return f"{era_abbr}{era_year_str}"
