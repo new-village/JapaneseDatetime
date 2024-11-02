@@ -1,0 +1,7 @@
+[
+    {"name_en": "Reiwa", "name_ja": "令和", "start_date": "2019-05-01"},
+    {"name_en": "Heisei", "name_ja": "平成", "start_date": "1989-01-08"},
+    {"name_en": "Showa", "name_ja": "昭和", "start_date": "1926-12-25"},
+    {"name_en": "Taisho", "name_ja": "大正", "start_date": "1912-07-30"},
+    {"name_en": "Meiji", "name_ja": "明治", "start_date": "1868-09-08"}
+]
