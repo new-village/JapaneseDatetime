@@ -3,6 +3,7 @@ import re
 import json
 from datetime import datetime
 import unicodedata
+from .kanji_to_num import replace_kanji_numerals
 
 # Load the eras data from an external JSON file
 module_dir = os.path.dirname(os.path.abspath(__file__))
@@ -28,7 +29,7 @@ class jpdatetime(datetime):
 
     @classmethod
     def strptime(cls, date_string, format_string):
-        date_string = unicodedata.normalize('NFKC', date_string)
+        date_string = cls._standardize_date_strings(date_string)
         # Check if custom era format codes are in the format string
         if any(re.search(f'%[-#]*{code}', format_string) for code in cls.custom_formats):
             # Split the format string into tokens
@@ -190,6 +191,11 @@ class jpdatetime(datetime):
             raise ValueError("Incomplete date information")
 
         return year, month, day
+
+    def _standardize_date_strings(data_strings):
+        """Standardize the input strings through replace kanji to num and NFKC normalizer"""
+        data_strings = replace_kanji_numerals(data_strings)
+        return unicodedata.normalize('NFKC', data_strings)
 
     def _get_era_info(self):
         """Retrieves the era information for the current date."""

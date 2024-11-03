@@ -5,7 +5,7 @@
 The `jpdatetime` library extends Python's `datetime` to support Japanese eras (元号). It allows parsing and formatting dates using Japanese era names like Reiwa (令和), Heisei (平成), and more, including special support for first-year notation (元年).
 
 ## Features
-- **Parsing**: Convert Japanese era date strings to Gregorian dates using the `strptime` method.
+- **Parsing**: Convert Japanese era date strings to Gregorian dates using the strptime method. This method supports date strings that include full-width characters and can handle years, months, and days written in kanji numerals.
 - **Formatting**: Convert Gregorian dates to Japanese era formatted strings using the `strftime` method.
 - **Supported Eras**: Support for conversion of eras from Reiki (霊亀), which began on October 3, 715, to Reiwa (令和).
 - **First Year Notation**: Supports the first-year notation (元年) for each era.
@@ -29,15 +29,15 @@ $ python setup.py install
 from jpdatetime import jpdatetime
 
 # Parsing Japanese era date string to a datetime object
-date_string = "令和5年10月30日"
+date_string = "平成三〇年十二月二四日"
 format_string = "%G年%m月%d日"
 date_obj = jpdatetime.strptime(date_string, format_string)
-print(date_obj)  # Output: 2023-10-30 00:00:00
+print(date_obj)  # Output: 2018-12-24 00:00:00
 
 # Formatting a datetime object to a Japanese era date string
 date = jpdatetime(2024, 10, 30)
 formatted_date = date.strftime("%G年%m月%d日")
-print(formatted_date)  # Output: "令和6年10月30日"
+print(formatted_date)  # Output: "令和06年10月30日"
 
 # Handling the first year of an era
 date_string = "令和元年5月1日"
