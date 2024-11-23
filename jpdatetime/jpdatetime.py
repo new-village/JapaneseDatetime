@@ -5,7 +5,7 @@ from datetime import datetime
 
 # Load the eras data from an external JSON file
 module_dir = os.path.dirname(os.path.abspath(__file__))
-eras_file_path = os.path.join(module_dir, 'eras.json')
+eras_file_path = os.path.join(module_dir, 'config/eras.json')
 
 with open(eras_file_path, 'r', encoding='utf-8') as f:
     eras_data = json.load(f)
