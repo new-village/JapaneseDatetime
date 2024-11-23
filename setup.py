@@ -7,7 +7,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name='jpdatetime',
-    version='1.4.0',
+    version='1.5.0',
     author='new-village',
     url='https://github.com/new-village/JapaneseDatetime',
     description="The jpdatetime library extends Python's datetime to support Japanese eras (元号). It allows parsing and formatting dates in Japanese eras",
